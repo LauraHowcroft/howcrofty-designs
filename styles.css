@@ -1,0 +1,468 @@
+
+
+/* PERSONAL WEBSITE */
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(242, 248, 154);
+  margin: 0;
+  padding: 0; 
+  min-height: 100vh;
+  max-width: 100vw;
+  line-height: 1.3;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.animate {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+header {
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+  /* padding: 16px; */
+  /* background-image: url(Links/Howcroft_S_Logo.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #112323; */
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+header img.hide-large {
+  width: 75vmin;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgb(236, 249, 52);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-content: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.nav-links a {
+  color: #112323;
+  text-decoration: none;
+  border-right: 1px solid;
+  padding-right: 16px;
+  margin-right: 16px;
+}
+
+.nav-links a:last-child {
+  border: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  justify-items: center;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 54px;
+}
+
+
+
+
+/* TYPOGRAPHY */
+
+
+h1 {
+  font-size: 34px;
+  color: rgb(16 37 35);
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.footer-left {
+  color: rgb(236, 249, 52);
+}
+
+.footer-right {
+  color: rgb(236, 249, 52);
+}
+
+.nav-left {
+  color: rgb(16 37 35);
+  text-align: left;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  margin-left: 140px;
+}
+
+.nav-right {
+  color: rgb(16 37 35);
+  text-align: right;
+  margin-right: 140px;
+}
+
+
+/* Responsive Grid */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 45px;
+  width: 100%; /* Make the image fill its container horizontally */
+  height: 100%; /* Make the image fill its container vertically */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+@media (max-width: 1000px) {
+
+  .container p:first-child {
+    border-bottom: 2px solid (16 37 35);
+    padding-bottom: 62px;
+  } 
+  
+}
+
+
+.grid-four {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); 
+  gap: 20px; /* Adjust the gap between images as needed */
+  width: 100%; /* Make the image fill its container horizontally */
+  height: 100%; /* Make the image fill its container vertically */
+  object-fit:cover; /* Maintain aspect ratio and cover the container */
+}
+
+.grid-item {
+  overflow: hidden; /* Ensures images don't overflow the grid item */
+}
+
+.grid-item img {
+  width: 100%; /* Make the image fill its container horizontally */
+  height: 100%; /* Make the image fill its container vertically */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+#portfolio {
+  padding-top: 60px;
+}
+
+
+
+/* Carousel */
+
+.carousel {
+  max-width: 80%;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-bottom: 150px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+/* Navigation Buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(236, 249, 52);
+  
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+
+
+/* MODAL CHATGPT */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  align-items: center;
+  object-fit: cover;
+}
+
+.grid-item {
+  width: 100%; /* Make the image fill its container horizontally */
+  height: 100%; /* Make the image fill its container vertically */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  color: rgb(236, 249, 52);
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ccc;
+}
+
+.modal.active {
+  display: block;
+}
+
+
+
+/* ABOUT */
+
+.about {
+  background: rgb(236, 249, 52);
+  padding: 1em;
+  /* border-top: 1px solid rgb(9, 37, 35); */
+  /* margin: 0 auto 64px auto; */
+  min-height: 50vh;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  align-items: center;
+  padding: 3em;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 16px auto;
+}
+
+
+
+
+
+
+/* FOOTER */
+footer {
+  background-color: rgb(16 37 35);
+  padding-bottom: 64px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  align-items: end;
+  padding: 1em;
+  max-width: 1200px;
+  margin: 0 auto 0 auto;
+  border-bottom: 1px solid rgb(236, 249, 52);
+}
+
+.footer-grid div {
+  margin-bottom: 1em;
+}
+
+.footer-grid a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+
+
+
+
+/* UTLITIES */
+
+.hide-small {
+  display: none;
+}
+
+.hide-large {
+  display: block;
+}
+
+
+
+/*  ANIMATIONS  */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+
+
+/* LIGHT DARK MODE */
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: rgb(16 37 35);
+  }
+
+  h1 {
+    color: rgb(242, 248, 154);
+  }
+
+  .container p:first-child {
+    border-bottom-color: inherit;
+  }
+
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 600px) {
+
+  .grid-four {
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+  }
+
+}
+
+
+
+
+
+@media (min-width: 900px) {
+
+  .grid-four {
+    grid-template-columns: repeat(4, 1fr); /* Creates 2 equal columns */
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer-logo {
+    grid-column-start: 2;
+  }
+
+  .footer-grid div {
+    grid-row-start: 1;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+
+  .footer-left {
+    text-align: left;
+  }
+
+
+  .about-grid {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    gap: 5vw;
+  }
+
+
+  .hide-small {
+    display: block;
+  }
+  
+  .hide-large {
+    display: none;
+  }
+
+  nav {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  
+}
+
+
+
