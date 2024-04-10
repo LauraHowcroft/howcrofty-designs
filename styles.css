@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100vw;
 }
 
 body {
@@ -94,6 +95,8 @@ nav {
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
 main {
@@ -187,7 +190,6 @@ h1 {
 /* Carousel */
 
 .carousel {
-  max-width: 80%;
   overflow: hidden;
   position: relative;
   margin: auto;
@@ -359,6 +361,9 @@ footer {
   display: block;
 }
 
+.hide-small-nav {
+  display: none;
+}
 
 
 /*  ANIMATIONS  */
@@ -409,6 +414,10 @@ footer {
     grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
   }
 
+  .carousel {
+    max-width: 80%;
+  }
+
 }
 
 
@@ -457,12 +466,22 @@ footer {
     display: none;
   }
 
-  nav {
-    grid-template-columns: repeat(3, auto);
-  }
+ 
 
   
 }
 
 
+
+@media (min-width: 1100px) {
+
+  .hide-small-nav {
+    display: block;
+  }
+
+  nav {
+    grid-template-columns: repeat(3, auto);
+  }
+
+}
 
